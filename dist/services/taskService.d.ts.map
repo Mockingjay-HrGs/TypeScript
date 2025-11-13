@@ -1,0 +1,1 @@
+{"version":3,"file":"taskService.d.ts","sourceRoot":"","sources":["../../src/services/taskService.ts"],"names":[],"mappings":"AAEA,OAAO,KAAK,EAAE,IAAI,EAAE,MAAM,EAAE,MAAM,mBAAmB,CAAC;AAmBtD,wBAAgB,UAAU,CAAC,KAAK,EAAE,MAAM,EAAE,WAAW,SAAK,GAAG,IAAI,CAYhE;AAGD,wBAAgB,SAAS,CAAC,MAAM,CAAC,EAAE,MAAM,GAAG,IAAI,EAAE,CAGjD;AAGD,wBAAgB,UAAU,CAAC,EAAE,EAAE,MAAM,GAAG,OAAO,CAM9C"}

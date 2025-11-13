@@ -1,0 +1,1 @@
+{"version":3,"file":"task.d.ts","sourceRoot":"","sources":["../../src/models/task.ts"],"names":[],"mappings":"AACA,MAAM,MAAM,MAAM,GAAG,MAAM,GAAG,aAAa,GAAG,MAAM,CAAC;AAErD,MAAM,WAAW,IAAI;IACjB,EAAE,EAAE,MAAM,CAAC;IACX,KAAK,EAAE,MAAM,CAAC;IACd,WAAW,CAAC,EAAE,MAAM,CAAC;IACrB,MAAM,EAAE,MAAM,CAAC;IACf,SAAS,EAAE,IAAI,CAAC;CACnB"}

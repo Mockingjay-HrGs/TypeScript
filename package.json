@@ -1,0 +1,17 @@
+{
+  "name": "ts-intro",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "dist/cli/main.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/cli/main.js",
+    "clean": "rm -rf dist",
+    "rebuild": "npm run clean && npm run build"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.0",
+    "typescript": "^5.9.3"
+  }
+}
