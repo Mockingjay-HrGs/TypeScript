@@ -1,12 +1,13 @@
-import { createTask, listTasks, deleteTask, updateTask, markStatus } from "../services/taskService.js";
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const taskService_js_1 = require("../services/taskService.js");
 const [, , command, ...args] = process.argv;
 function help() {
     console.log(`Usage:
   create <title> [description]     Crée une tâche
   list [status]                    Liste (status: todo|in-progress|done)
   delete <id>                      Supprime une tâche
-  update <id> [--title T] [--desc D] [--status S]
-                                   Met à jour une tâche
+  update <id> [--title T] [--desc D] [--status S]  Met à jour une tâche
   mark <id> <status>               Change le statut
   help                             Aide`);
 }
@@ -19,13 +20,13 @@ switch (command) {
             help();
             process.exit(1);
         }
-        const t = createTask(title, description);
+        const t = (0, taskService_js_1.createTask)(title, description);
         console.log("Tâche créée :", t);
         break;
     }
     case "list": {
         const status = args[0];
-        const tasks = listTasks(status);
+        const tasks = (0, taskService_js_1.listTasks)(status);
         console.table(tasks);
         break;
     }
@@ -36,7 +37,7 @@ switch (command) {
             help();
             process.exit(1);
         }
-        console.log(deleteTask(id) ? "Tâche supprimée." : "ID introuvable.");
+        console.log((0, taskService_js_1.deleteTask)(id) ? "Tâche supprimée." : "ID introuvable.");
         break;
     }
     case "update": {
@@ -56,8 +57,8 @@ switch (command) {
             patch.description = args[descIdx + 1];
         if (statIdx !== -1 && args[statIdx + 1])
             patch.status = args[statIdx + 1];
-        const updated = updateTask(id, patch);
-        console.log(updated ? "Tâche mise à jour :" : "ID introuvable.", updated ?? "");
+        const updated = (0, taskService_js_1.updateTask)(id, patch);
+        console.log(updated ? "Tâche mise à jour :" : "ID introuvable.", updated !== null && updated !== void 0 ? updated : "");
         break;
     }
     case "mark": {
@@ -67,8 +68,8 @@ switch (command) {
             console.log("Usage: mark <id> <todo|in-progress|done>");
             process.exit(1);
         }
-        const updated = markStatus(id, status);
-        console.log(updated ? "Statut mis à jour :" : "ID introuvable.", updated ?? "");
+        const updated = (0, taskService_js_1.markStatus)(id, status);
+        console.log(updated ? "Statut mis à jour :" : "ID introuvable.", updated !== null && updated !== void 0 ? updated : "");
         break;
     }
     case "help":
